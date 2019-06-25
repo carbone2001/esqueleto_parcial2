@@ -1,0 +1,102 @@
+# depslib dependency file v1.0
+1561042123 source:d:\escritorio\estructura_parcial2\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Employee.h"
+	"parser.h"
+	"inputs.h"
+
+1561042123 d:\escritorio\estructura_parcial2\linkedlist.h
+
+1561042123 d:\escritorio\estructura_parcial2\employee.h
+
+1561042123 d:\escritorio\estructura_parcial2\parser.h
+
+1561044889 d:\escritorio\estructura_parcial2\inputs.h
+
+1561042123 source:d:\escritorio\estructura_parcial2\employee.c
+	<stdlib.h>
+	"Employee.h"
+	<string.h>
+
+1561042123 source:d:\escritorio\estructura_parcial2\inputs.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"inputs.h"
+
+1561042541 source:d:\escritorio\estructura_parcial2\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1561042532 source:d:\escritorio\estructura_parcial2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+
+1561042123 d:\escritorio\estructura_parcial2\controller.h
+
+1561042123 source:d:\escritorio\estructura_parcial2\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+
+1561042123 source:d:\escritorio\esqueleto_parcial2\estructura_parcial2\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Employee.h"
+	"parser.h"
+	"inputs.h"
+
+1561042123 d:\escritorio\esqueleto_parcial2\estructura_parcial2\linkedlist.h
+
+1561499685 d:\escritorio\esqueleto_parcial2\estructura_parcial2\employee.h
+
+1561042123 d:\escritorio\esqueleto_parcial2\estructura_parcial2\parser.h
+
+1561044889 d:\escritorio\esqueleto_parcial2\estructura_parcial2\inputs.h
+
+1561499828 source:d:\escritorio\esqueleto_parcial2\estructura_parcial2\employee.c
+	<stdlib.h>
+	"Employee.h"
+	<string.h>
+	<stdio.h>
+
+1561044807 source:d:\escritorio\esqueleto_parcial2\estructura_parcial2\inputs.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"inputs.h"
+
+1561042541 source:d:\escritorio\esqueleto_parcial2\estructura_parcial2\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1561042532 source:d:\escritorio\esqueleto_parcial2\estructura_parcial2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+
+1561042123 d:\escritorio\esqueleto_parcial2\estructura_parcial2\controller.h
+
+1561042123 source:d:\escritorio\esqueleto_parcial2\estructura_parcial2\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+
