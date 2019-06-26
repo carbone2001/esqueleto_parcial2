@@ -1,0 +1,55 @@
+# depslib dependency file v1.0
+1561555485 source:d:\p2 lab\parcial2\dominio.c
+	"dominio.h"
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+
+1561555964 d:\p2 lab\parcial2\dominio.h
+
+1561548719 source:d:\p2 lab\parcial2\inputs.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"inputs.h"
+
+1561548719 d:\p2 lab\parcial2\inputs.h
+
+1561548719 source:d:\p2 lab\parcial2\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1561548719 d:\p2 lab\parcial2\linkedlist.h
+
+1561555964 source:d:\p2 lab\parcial2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"inputs.h"
+	"Controller.h"
+	"dominio.h"
+
+1561555462 source:d:\p2 lab\parcial2\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"dominio.h"
+
+1561554845 source:d:\p2 lab\parcial2\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Controller.h"
+	"LinkedList.h"
+	"parser.h"
+	"inputs.h"
+
+1561551628 d:\p2 lab\parcial2\parser.h
+
+1561554593 d:\p2 lab\parcial2\controller.h
+	"LinkedList.h"
+
