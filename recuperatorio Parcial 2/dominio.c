@@ -11,13 +11,13 @@ eDominio* dominio_newParametros(char* idStr,char* dominioStr,char* anioStr,char 
     eDominio* dom = (eDominio*) malloc (sizeof(eDominio));
     if(dom != NULL)
     {
-        if(dominio_setId(dom,atoi(idStr))==0)
+        if(setId(dom,atoi(idStr))==0)
         {
-            if(dominio_setDominio(dom,dominioStr)==0)
+            if(setDominio(dom,dominioStr)==0)
             {
-                if(dominio_setAnio(dom,atoi(anioStr))==0)
+                if(setAnio(dom,atoi(anioStr))==0)
                 {
-                    if(dominio_setTipo(dom,tipo)==0)
+                    if(setTipo(dom,tipo)==0)
                     {
                         error = 0;
 
@@ -35,7 +35,7 @@ eDominio* dominio_newParametros(char* idStr,char* dominioStr,char* anioStr,char 
 }
 
 
-void printDominios(eDominio* p)
+void printElemento(eDominio* p)
 {
     printf("ID:%d dominio:%s anio: %d tipo: %c\r\n",p->id,p->dominio,p->anio,p->tipo);
 }
@@ -46,16 +46,28 @@ int asignarTipo(eDominio* this)
 
     if(isdigit(this->dominio[0]))
     {
-        dominio_setTipo(this,'M');
+        setTipo(this,'M');
         retorno = 1;
     }
     else
     {
-        dominio_setTipo(this,'A');
+        setTipo(this,'A');
         retorno = 1;
     }
     return retorno;
 }
+
+
+/*void printElementos(LinkedList* this)
+{
+    for(int i=0; i<ll_len(this);i++)
+    {
+        printElemento(ll_get(this,i));
+    }
+}*/
+
+
+///FUNCIONES QUE CALIFICAN
 
 int esUnAuto(eDominio* this)
 {
@@ -78,13 +90,7 @@ int esUnaMoto(eDominio* this)
 }
 
 
-
-
-
-
-
-
-int dominio_setDominio(eDominio* this,char* dominio)
+int setDominio(eDominio* this,char* dominio)
 {
     int error = 1;
     if(this != NULL && strlen(dominio)<7)
@@ -96,7 +102,7 @@ int dominio_setDominio(eDominio* this,char* dominio)
     return error;
 }
 
-int dominio_getDominio(eDominio* this,char* dominio)
+int getDominio(eDominio* this,char* dominio)
 {
     int error = 1;
     if (this != NULL || dominio!=NULL)
@@ -109,7 +115,7 @@ int dominio_getDominio(eDominio* this,char* dominio)
 
 
 
-int dominio_setTipo(eDominio* this,char tipo)
+int setTipo(eDominio* this,char tipo)
 {
     int error = 1;
 
@@ -120,7 +126,7 @@ int dominio_setTipo(eDominio* this,char tipo)
     }
     return error;
 }
-int dominio_getTipo(eDominio* this,char* tipo)
+int getTipo(eDominio* this,char* tipo)
 {
     int error = 1;
     if (this != NULL || (*tipo == 'M' || *tipo == 'A'))
@@ -132,7 +138,7 @@ int dominio_getTipo(eDominio* this,char* tipo)
 
 }
 
-int dominio_setId(eDominio* this,int id)
+int setId(eDominio* this,int id)
 {
     int error = 1;
 
@@ -143,7 +149,7 @@ int dominio_setId(eDominio* this,int id)
     }
     return error;
 }
-int dominio_getId(eDominio* this,int* id)
+int getId(eDominio* this,int* id)
 {
     int error = 1;
     if (this != NULL || id!=NULL)
@@ -155,7 +161,7 @@ int dominio_getId(eDominio* this,int* id)
 
 }
 
-int dominio_setAnio(eDominio* this,int anio)
+int setAnio(eDominio* this,int anio)
 {
     int error = 1;
 
@@ -166,7 +172,7 @@ int dominio_setAnio(eDominio* this,int anio)
     }
     return error;
 }
-int dominio_getAnio(eDominio* this,int* anio)
+int getAnio(eDominio* this,int* anio)
 {
     int error = 1;
     if (this != NULL || anio!=NULL)
@@ -176,4 +182,71 @@ int dominio_getAnio(eDominio* this,int* anio)
     }
     return error;
 
+}
+
+/*int ordenSegunNumero(void *elemento,void* elemento2)
+{
+    int retorno;
+    if(elemento2>elemento)
+    {
+        retorno = 1;
+    }
+    else if(elemento2==elemento)
+    {
+        retorno = 0;
+    }
+    else
+    {
+        retorno = -1;
+    }
+    return retorno;
+}*/
+
+/*int ordenSegunAlfabeto(eDominio *cadena,void* cadena2)
+{
+    int retorno = strcmp(cadena);
+
+    return retorno;
+}*/
+
+int idcmp(eDominio* elemento1, eDominio* elemento2)
+{
+    int retorno = -2;
+    if(elemento1 != NULL && elemento2 != NULL)
+    {
+        if(elemento1->id>elemento2->id)
+        {
+            retorno = 1;
+        }
+        else if (elemento1->id < elemento2->id)
+        {
+            retorno = -1;
+        }
+        else
+        {
+            retorno = 0;
+        }
+    }
+    return retorno;
+}
+
+int aniocmp(eDominio* elemento1, eDominio* elemento2)
+{
+    int retorno = -2;
+    if(elemento1 != NULL && elemento2 != NULL)
+    {
+        if(elemento1->anio>elemento2->anio)
+        {
+            retorno = 1;
+        }
+        else if (elemento1->anio < elemento2->anio)
+        {
+            retorno = -1;
+        }
+        else
+        {
+            retorno = 0;
+        }
+    }
+    return retorno;
 }

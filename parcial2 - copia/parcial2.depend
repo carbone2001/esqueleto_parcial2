@@ -110,3 +110,60 @@
 	"LinkedList.h"
 	"dominio.h"
 
+1561751374 source:d:\escritorio\esqueleto_parcial2\parcial2 - copia\inputs.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"inputs.h"
+
+1561751374 d:\escritorio\esqueleto_parcial2\parcial2 - copia\inputs.h
+
+1561761831 source:d:\escritorio\esqueleto_parcial2\parcial2 - copia\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1561760359 d:\escritorio\esqueleto_parcial2\parcial2 - copia\linkedlist.h
+
+1562188292 source:d:\escritorio\esqueleto_parcial2\parcial2 - copia\dominio.c
+	"dominio.h"
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	<ctype.h>
+	"LinkedList.h"
+
+1561759513 d:\escritorio\esqueleto_parcial2\parcial2 - copia\dominio.h
+
+1562188094 source:d:\escritorio\esqueleto_parcial2\parcial2 - copia\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Controller.h"
+	"LinkedList.h"
+	"dominio.h"
+	"parser.h"
+	"inputs.h"
+
+1561762366 d:\escritorio\esqueleto_parcial2\parcial2 - copia\controller.h
+	"LinkedList.h"
+
+1561751374 d:\escritorio\esqueleto_parcial2\parcial2 - copia\parser.h
+
+1562188075 source:d:\escritorio\esqueleto_parcial2\parcial2 - copia\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"inputs.h"
+	"Controller.h"
+	"dominio.h"
+
+1562188635 source:d:\escritorio\esqueleto_parcial2\parcial2 - copia\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"dominio.h"
+

@@ -10,14 +10,14 @@
  * \return int
  *
  */
-int parser_dominioFromText(FILE* pFile , LinkedList* pArrayListDominio)
+int parser_FromText(FILE* pFile , LinkedList* pArrayList)
 {
     int error;
     char buffer[3][50];
     int cant;
-    eDominio* dom;
+    eDominio* dom; ///Estructura a parsear
     error = 0;
-    if(pFile != NULL && pArrayListDominio != NULL)
+    if(pFile != NULL && pArrayList != NULL)
     {
         //Leida fantasma
         cant = fscanf(pFile,"%[^,],%[^,],%[^\n]\n",buffer[0],buffer[1],buffer[2]);
@@ -41,7 +41,7 @@ int parser_dominioFromText(FILE* pFile , LinkedList* pArrayListDominio)
                     error = 1;
                     break;
                 }
-                if(ll_add(pArrayListDominio,dom))
+                if(ll_add(pArrayList,dom))
                 {
                     error = 1;
                     break;
@@ -58,26 +58,26 @@ int parser_dominioFromText(FILE* pFile , LinkedList* pArrayListDominio)
 /** \brief Parsea los datos los datos de los empleados desde el archivo data.csv (modo binario).
  *
  * \param path char*
- * \param pArrayListEmployee LinkedList*
+ * \param pArrayList LinkedList*
  * \return int
  *
  */
- /*
-int parser_EmployeeFromBinary(FILE* pFile, LinkedList* pArrayListEmployee)
+
+int parser_FromBinary(FILE* pFile, LinkedList* pArrayList)
 {
 
-    Employee *emp;
+    eDominio *dom;
     int error = 1;
     int cant;
-    if(pFile != NULL && pArrayListEmployee != NULL)
+    if(pFile != NULL && pArrayList != NULL)
     while(!feof(pFile))
     {
-        emp = (Employee*) malloc (sizeof(Employee));
-        if(emp == NULL)
+        dom = (eDominio*) malloc (sizeof(eDominio));
+        if(dom == NULL)
         {
             break;
         }
-        cant = fread(emp,sizeof(Employee),1,pFile);
+        cant = fread(dom,sizeof(eDominio),1,pFile);
         if(cant != 1)
         {
             if(feof(pFile))
@@ -88,11 +88,11 @@ int parser_EmployeeFromBinary(FILE* pFile, LinkedList* pArrayListEmployee)
             break;
         }
 
-        if(ll_add(pArrayListEmployee,emp))
+        if(ll_add(pArrayList,dom))
         {
             break;
         }
     }
     return error;
 }
-*/
+

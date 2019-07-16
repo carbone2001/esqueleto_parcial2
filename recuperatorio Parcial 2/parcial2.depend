@@ -110,3 +110,60 @@
 	"LinkedList.h"
 	"dominio.h"
 
+1563294866 source:d:\escritorio\esqueleto_parcial2\recuperatorio parcial 2\dominio.c
+	"dominio.h"
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	<ctype.h>
+	"LinkedList.h"
+
+1563295203 d:\escritorio\esqueleto_parcial2\recuperatorio parcial 2\dominio.h
+
+1561760359 d:\escritorio\esqueleto_parcial2\recuperatorio parcial 2\linkedlist.h
+
+1561751374 source:d:\escritorio\esqueleto_parcial2\recuperatorio parcial 2\inputs.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"inputs.h"
+
+1561751374 d:\escritorio\esqueleto_parcial2\recuperatorio parcial 2\inputs.h
+
+1563048056 source:d:\escritorio\esqueleto_parcial2\recuperatorio parcial 2\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1563294707 source:d:\escritorio\esqueleto_parcial2\recuperatorio parcial 2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"inputs.h"
+	"Controller.h"
+	"dominio.h"
+
+1563196760 d:\escritorio\esqueleto_parcial2\recuperatorio parcial 2\controller.h
+	"LinkedList.h"
+
+1563197257 source:d:\escritorio\esqueleto_parcial2\recuperatorio parcial 2\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"dominio.h"
+
+1563197984 source:d:\escritorio\esqueleto_parcial2\recuperatorio parcial 2\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Controller.h"
+	"LinkedList.h"
+	"dominio.h"
+	"parser.h"
+	"inputs.h"
+
+1563196754 d:\escritorio\esqueleto_parcial2\recuperatorio parcial 2\parser.h
+

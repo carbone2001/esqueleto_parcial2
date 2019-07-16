@@ -538,6 +538,12 @@ int ll_sort(LinkedList* this, int (*pFunc)(void*,void*), int order)
     return returnAux;
 }
 
+
+
+
+///FUNCIONES AGREGADAS
+
+
 void map(LinkedList* this,int (*pFunc)(void*))
 {
     for(int i=0;i<ll_len(this);i++)

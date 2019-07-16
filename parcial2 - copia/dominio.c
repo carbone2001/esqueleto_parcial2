@@ -7,74 +7,71 @@
 
 eDominio* dominio_newParametros(char* idStr,char* dominioStr,char* anioStr,char tipo)
 {
+    eDominio * newDom = (eDominio*) malloc (sizeof(eDominio));
     int error = 1;
-    eDominio* dom = (eDominio*) malloc (sizeof(eDominio));
-    if(dom != NULL)
+    if(dominio_setId(newDom,atoi(idStr))==0)
     {
-        if(dominio_setId(dom,atoi(idStr))==0)
+        if(dominio_setDominio(newDom,dominioStr)==0)
         {
-            if(dominio_setDominio(dom,dominioStr)==0)
+            if(dominio_setAnio(newDom,atoi(anioStr))==0)
             {
-                if(dominio_setAnio(dom,atoi(anioStr))==0)
+                if(dominio_setTipo(newDom,tipo)==0)
                 {
-                    if(dominio_setTipo(dom,tipo)==0)
-                    {
-                        error = 0;
-
-                    }
+                    error = 0;
                 }
             }
         }
-        if (error)
-        {
-            free(dom);
-            dom = NULL;
-        }
     }
-    return dom;
+    if(error)
+    {
+        newDom = NULL;
+    }
+    return newDom;
 }
 
 
 void printDominios(eDominio* p)
 {
-    printf("ID:%d dominio:%s anio: %d tipo: %c\r\n",p->id,p->dominio,p->anio,p->tipo);
+    printf("\nID: %d, Dominio: %s, Anio: %d, tipo: %c",p->id,p->dominio,p->anio,p->tipo);
 }
 
 int asignarTipo(eDominio* this)
 {
-    int retorno = 0;
-
-    if(isdigit(this->dominio[0]))
+    int error = 1;
+    if(this != NULL)
     {
-        dominio_setTipo(this,'M');
-        retorno = 1;
+        if(isdigit( this->dominio[0] ))
+        {
+            this->tipo = 'M';
+            error = 0;
+        }
+        else
+        {
+            this->tipo = 'A';
+            error = 0;
+        }
     }
-    else
-    {
-        dominio_setTipo(this,'A');
-        retorno = 1;
-    }
-    return retorno;
+    return error;
 }
 
 int esUnAuto(eDominio* this)
 {
-    int retorno = 0;
+    int r = 0;
     if(this->tipo == 'A')
     {
-        retorno = 1;
+        r = 1;
     }
-    return retorno;
+    return r;
 }
 
 int esUnaMoto(eDominio* this)
 {
-    int retorno = 0;
+    int r = 0;
     if(this->tipo == 'M')
     {
-        retorno = 1;
+        r = 1;
     }
-    return retorno;
+    return r;
 }
 
 
@@ -87,23 +84,23 @@ int esUnaMoto(eDominio* this)
 int dominio_setDominio(eDominio* this,char* dominio)
 {
     int error = 1;
-    if(this != NULL && strlen(dominio)<7)
+    if(this != NULL)
     {
         strcpy(this->dominio,dominio);
         error = 0;
     }
-
     return error;
 }
 
 int dominio_getDominio(eDominio* this,char* dominio)
 {
     int error = 1;
-    if (this != NULL || dominio!=NULL)
+    if(this != NULL)
     {
         strcpy(dominio,this->dominio);
         error = 0;
     }
+
     return error;
 }
 
@@ -112,8 +109,7 @@ int dominio_getDominio(eDominio* this,char* dominio)
 int dominio_setTipo(eDominio* this,char tipo)
 {
     int error = 1;
-
-    if(this != NULL && (tipo == 'M' || tipo == 'A' || tipo == ' '))
+    if(this != NULL)
     {
         this->tipo = tipo;
         error = 0;
@@ -123,11 +119,12 @@ int dominio_setTipo(eDominio* this,char tipo)
 int dominio_getTipo(eDominio* this,char* tipo)
 {
     int error = 1;
-    if (this != NULL || (*tipo == 'M' || *tipo == 'A'))
+    if(this != NULL)
     {
         *tipo = this->tipo;
         error = 0;
     }
+
     return error;
 
 }
@@ -135,8 +132,7 @@ int dominio_getTipo(eDominio* this,char* tipo)
 int dominio_setId(eDominio* this,int id)
 {
     int error = 1;
-
-    if(this != NULL && id>0)
+    if(this != NULL)
     {
         this->id = id;
         error = 0;
@@ -146,20 +142,19 @@ int dominio_setId(eDominio* this,int id)
 int dominio_getId(eDominio* this,int* id)
 {
     int error = 1;
-    if (this != NULL || id!=NULL)
+    if(this != NULL)
     {
         *id = this->id;
         error = 0;
     }
-    return error;
 
+    return error;
 }
 
 int dominio_setAnio(eDominio* this,int anio)
 {
     int error = 1;
-
-    if(this != NULL && anio>=0)
+    if(this != NULL)
     {
         this->anio = anio;
         error = 0;
@@ -169,11 +164,11 @@ int dominio_setAnio(eDominio* this,int anio)
 int dominio_getAnio(eDominio* this,int* anio)
 {
     int error = 1;
-    if (this != NULL || anio!=NULL)
+    if(this != NULL)
     {
         *anio = this->anio;
         error = 0;
     }
-    return error;
 
+    return error;
 }

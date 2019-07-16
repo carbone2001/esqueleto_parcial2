@@ -13,15 +13,15 @@
  * \param pArrayListEmployee LinkedList*
  * \return int
  */
-int controller_loadFromText(char* path, LinkedList* pArrayListDominios)
+int controller_loadFromText(char* path, LinkedList* pArrayList)
 {
     int error = 1;
     FILE * file;
 
     file = fopen(path,"r");
-    if(file!=NULL && pArrayListDominios != NULL)
+    if(file!=NULL && pArrayList != NULL)
     {
-        error = parser_dominioFromText(file,pArrayListDominios);
+        error = parser_FromText(file,pArrayList);
     }
     system("cls");
     if(error)
@@ -39,16 +39,16 @@ int controller_loadFromText(char* path, LinkedList* pArrayListDominios)
 /** \brief Carga los datos de los empleados desde el archivo data.csv (modo binario).
  *
  * \param path char*
- * \param pArrayListEmployee LinkedList*
+ * \param pArrayList LinkedList*
  * \return int
  *
  */
-/*int controller_loadFromBinary(char* path, LinkedList* pArrayListEmployee)
+int controller_loadFromBinary(char* path, LinkedList* pArrayList)
 {
     FILE * pFile;
     int error;
-    pFile = fopen("data.bin","rb");
-    error = parser_EmployeeFromBinary(pFile,pArrayListEmployee);
+    pFile = fopen(path,"rb");
+    error = parser_FromBinary(pFile,pArrayList);
     fclose(pFile);
     system("cls");
     if(error)
@@ -60,7 +60,7 @@ int controller_loadFromText(char* path, LinkedList* pArrayListDominios)
         printf("\nSe ha cargado desde el archivo binario con exito!!\n");
     }
     return error;
-}*/
+}
 
 /** \brief Alta de empleados
  *
@@ -424,26 +424,28 @@ int controller_sortEmployee(LinkedList* pArrayListEmployee)
  *
  */
 
-int controller_saveAsText(char* path, LinkedList* pArrayListDominio)
+int controller_saveAsText(char* path, LinkedList* pArrayList)
 {
 
 
     FILE* pFile;
-    eDominio* dom;
+    eDominio* dom; ///EL PUNTERO AL TIPO DE ELEMENTO ESTRUCTURA
     int error = 0;
 
     pFile = fopen (path,"w");
     if(pFile != NULL)
     {
+        ///SE IMPRIMEN LOS NOMBRES DE CADA CAMPO
         fprintf(pFile,"\nid,dominio,anio\n");
-        for(int i=0; i<ll_len(pArrayListDominio); i++)
+        for(int i=0; i<ll_len(pArrayList); i++)
         {
-            dom = ll_get(pArrayListDominio,i);
+            dom = ll_get(pArrayList,i);
             if(dom==NULL)
             {
                 error = 1;
                 break;
             }
+            ///SE IMPRIMEN LOS DATOS
             fprintf(pFile,"%d,%s,%d\n",dom->id,dom->dominio,dom->anio);
         }
         system("pause");
@@ -452,8 +454,6 @@ int controller_saveAsText(char* path, LinkedList* pArrayListDominio)
     {
         error = 1;
     }
-    printf("error: %d",error);
-    system("pause");
     fclose(pFile);
     free(dom);
     return error;
@@ -462,37 +462,37 @@ int controller_saveAsText(char* path, LinkedList* pArrayListDominio)
 /** \brief Guarda los datos de los empleados en el archivo data.csv (modo binario).
  *
  * \param path char*
- * \param pArrayListEmployee LinkedList*
+ * \param pArrayList LinkedList*
  * \return int
  *
  */
- /*
-int controller_saveAsBinary(char* path, LinkedList* pArrayListEmployee)
+
+int controller_saveAsBinary(char* path, LinkedList* pArrayList)
 {
     FILE * pFile;
-    Employee* emp;
+    eDominio* dom; ///Puntero a estructura
     int error = 1;
     int cant;
 
-    emp = (Employee*) malloc (sizeof(Employee));
-    if(emp != NULL)
+    dom = (eDominio*) malloc (sizeof(eDominio));
+    if(dom != NULL)
     {
         pFile = fopen (path,"wb");
         if(pFile != NULL)
         {
-            for(int i=1; i<ll_len(pArrayListEmployee); i++)
+            for(int i=1; i<ll_len(pArrayList); i++)
             {
                 fseek(pFile,0L,SEEK_END);
-                emp = ll_get(pArrayListEmployee,i);
-                if(emp == NULL)
+                dom = ll_get(pArrayList,i);
+                if(dom == NULL)
                 {
                     break;
                 }
-                if((cant = fwrite(emp,sizeof(Employee),1,pFile))!=1)
+                if((cant = fwrite(dom,sizeof(eDominio),1,pFile))!=1)
                 {
                     break;
                 }
-                if(i==ll_len(pArrayListEmployee)-1)
+                if(i==ll_len(pArrayList)-1)
                 {
                     error = 0;
                 }
@@ -510,5 +510,5 @@ int controller_saveAsBinary(char* path, LinkedList* pArrayListEmployee)
         printf("\nLa carga se ha realizado con exito!!\n");
     }
     return error;
-}*/
+}
 
